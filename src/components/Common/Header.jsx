@@ -14,7 +14,7 @@ const wrappingNavData = [
   {
     id: 1,
     element: (
-      <Link to={HOME_PAGE} style={{ textDecoration: 'none' }}>
+      <Link to={HOME_PAGE}>
         <span>Home</span>
       </Link>
     ),
@@ -22,7 +22,7 @@ const wrappingNavData = [
   {
     id: 2,
     element: (
-      <Link to={UPCOMING_PAGE} style={{ textDecoration: 'none' }}>
+      <Link to={UPCOMING_PAGE}>
         <span>Comming</span>
       </Link>
     ),
@@ -30,7 +30,7 @@ const wrappingNavData = [
   {
     id: 3,
     element: (
-      <Link to={TOPRATED_PAGE} style={{ textDecoration: 'none' }}>
+      <Link to={TOPRATED_PAGE}>
         <span>Ranking</span>
       </Link>
     ),
@@ -38,7 +38,7 @@ const wrappingNavData = [
   {
     id: 4,
     element: (
-      <Link to={NOWPLAYING_PAGE} style={{ textDecoration: 'none' }}>
+      <Link to={NOWPLAYING_PAGE}>
         <span>Now</span>
       </Link>
     ),
