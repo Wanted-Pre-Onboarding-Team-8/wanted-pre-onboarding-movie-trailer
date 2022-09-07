@@ -9,7 +9,7 @@ export default function Card() {
         <img src="img/poster.jpg" alt="Avatar" />
       </ImageWrapper>
       <MovieData>
-        <p>스파이더맨</p>
+        <p>아이언맨</p>
         <p>2022-06-11</p>
       </MovieData>
     </Wrapper>
