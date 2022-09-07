@@ -4,9 +4,9 @@ import {
   UPCOMING_PAGE,
   TOPRATED_PAGE,
   NOWPLAYING_PAGE,
-} from '../../consts';
+} from '../consts';
 
-export const navMenuData = [
+const navMenuData = [
   {
     id: 1,
     element: (
@@ -40,3 +40,5 @@ export const navMenuData = [
     ),
   },
 ];
+
+export default navMenuData;
