@@ -5,9 +5,9 @@ import { colors } from '../../style/colors';
 export default function Card() {
   return (
     <Wrapper>
-      <Image>
-        <Poster src="img/poster.jpg" alt="Avatar" />
-      </Image>
+      <ImageWrapper>
+        <img src="img/poster.jpg" alt="Avatar" />
+      </ImageWrapper>
       <MovieData>
         <p>스파이더맨</p>
         <p>2022-06-11</p>
@@ -27,15 +27,15 @@ const Wrapper = styled.div`
   border-radius: 5px;
   background-color: ${colors.white};
 `;
-const Image = styled.div`
+const ImageWrapper = styled.div`
   width: 100%;
   height: 80%;
-`;
 
-const Poster = styled.img`
-  width: 100%;
-  height: 100%;
-  border-radius: 5px 5px 0 0;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 0 0;
+  }
 `;
 
 const MovieData = styled.div`
