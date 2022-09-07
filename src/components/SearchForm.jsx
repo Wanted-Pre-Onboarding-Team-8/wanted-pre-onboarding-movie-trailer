@@ -3,8 +3,14 @@ import styled from 'styled-components';
 import { colors } from '../style';
 
 export default function SearchForm() {
+  const handleSubmitSearchForm = async (event) => {
+    event.preventDefault();
+
+    const { searchKeywordInput } = event.currentTarget;
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmitSearchForm}>
       <legend className="a11yHidden">검색어 입력폼</legend>
       <fieldset>
         <label htmlFor="keyword" className="a11yHidden">
