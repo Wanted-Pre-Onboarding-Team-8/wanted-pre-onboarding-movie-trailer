@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import base from '../../apis/base';
+import { Card } from '../common';
 
 export default function UpComing() {
   const [movieList, setMovieList] = useState([]);
-  const getUpCominMovie = async (page) => {
+  const getUpComingMovie = async (page) => {
     const response = await base.get({
       url: '/movie/upcoming',
       params: { page },
@@ -11,8 +12,9 @@ export default function UpComing() {
     return setMovieList(response.data);
   };
   useEffect(() => {
-    getUpCominMovie();
+    getUpComingMovie();
   }, [movieList]);
+  
   console.log(movieList);
-  return <div>UpComing</div>;
+  return <Card />;
 }
