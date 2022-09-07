@@ -1,6 +1,12 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-import { navMenuData } from '../../utils';
+import { Link } from 'react-router-dom';
+import {
+  HOME_PAGE,
+  TOPRATED_PAGE,
+  UPCOMING_PAGE,
+  NOWPLAYING_PAGE,
+} from '../../consts';
 import { colors } from '../../style/colors';
 import { media } from '../../style/media';
 import { GiTomato, GiHamburgerMenu } from 'react-icons/gi';
@@ -24,19 +30,32 @@ export default function Header() {
         <span class="title">Fresh Tomato</span>
       </Logo>
       <NavItems isOpenMenu={isOpenMenu}>
-        {navMenuData.map((item) => (
-          <NavItem key={item.id}>{item.element}</NavItem>
-        ))}
+        <NavItem>
+          <Link to={HOME_PAGE}>
+            <span>Home</span>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to={UPCOMING_PAGE}>
+            <span>Coming</span>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to={NOWPLAYING_PAGE}>
+            <span>Now</span>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to={TOPRATED_PAGE}>
+            <span>Ranking</span>
+          </Link>
+        </NavItem>
       </NavItems>
       <IconWrapper>
         {!isOpenMenu ? (
-          <GiHamburgerMenu size={30} onClick={() => handleOpenMenu()} />
+          <GiHamburgerMenu size={30} onClick={handleOpenMenu} />
         ) : (
-          <AiOutlineClose
-            size={30}
-            color="#fff"
-            onClick={() => handleClose()}
-          />
+          <AiOutlineClose size={30} color="#fff" onClick={handleClose} />
         )}
       </IconWrapper>
     </Wrapper>
