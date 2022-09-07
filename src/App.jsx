@@ -7,14 +7,7 @@ import {
   SEARCH_PAGE,
   TOPRATED_PAGE,
 } from './consts';
-import {
-  Home,
-  Detail,
-  NowPlaying,
-  UpComing,
-  Search,
-  TopRated,
-} from './pages';
+import { Home, Detail, NowPlaying, UpComing, Search, TopRated } from './pages';
 
 function App() {
   return (
