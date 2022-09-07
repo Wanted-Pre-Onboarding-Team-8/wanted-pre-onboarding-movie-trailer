@@ -8,12 +8,9 @@ const customAxios = axios.create({
     'Content-Type': 'application/json',
   },
 });
-const handleRequest = (config) => {
-  return config;
-};
 
-const createApiMethod = (axiosInstance, methodType) => (config) => {
-  return axiosInstance({ ...handleRequest(config), method: methodType });
+const createApiMethod = (axiosInstance, methodType) => {
+  return axiosInstance({ method: methodType });
 };
 
 export default {
