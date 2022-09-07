@@ -9,10 +9,13 @@ import {
 } from './consts';
 import { Home, Detail, NowPlaying, UpComing, Search, TopRated } from './pages';
 
+import { Header } from './components';
+
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path={HOME_PAGE} element={<Home />} />
           <Route path={DETAIL_PAGE} element={<Detail />} />
