@@ -2,15 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../../style/colors';
 
-export default function Card() {
+export default function Card({ props }) {
+  const { imgSrc, title, star, vote_count } = props;
+
   return (
     <Wrapper>
       <ImageWrapper>
-        <img src="img/poster.jpg" alt="Avatar" />
+        <img src={imgSrc} alt={title} />
       </ImageWrapper>
       <MovieData>
-        <p>스파이더맨</p>
-        <p>2022-06-11</p>
+        <p>제목: {title}</p>
+        <p>
+          별점: ★ {star}({vote_count})
+        </p>
       </MovieData>
     </Wrapper>
   );
@@ -18,10 +22,10 @@ export default function Card() {
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+  flex-wrap: wrap;
   margin-top: 50px;
-  width: 230px;
+  margin-left: 2%;
+  width: 20%;
   height: 330px;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
@@ -40,10 +44,11 @@ const ImageWrapper = styled.div`
 
 const MovieData = styled.div`
   width: 100%;
-  padding: 2px 16px;
-  margin-top: 12px;
+  height: 18%;
+  padding: 0px 15px;
 
   p {
     margin-top: 10px;
+    font-size: 14px;
   }
 `;
