@@ -9,17 +9,21 @@ import {
 } from './consts';
 import { Home, Detail, NowPlaying, UpComing, Search, TopRated } from './pages';
 
+import { Layout } from './components';
+
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path={HOME_PAGE} element={<Home />} />
-          <Route path={DETAIL_PAGE} element={<Detail />} />
-          <Route path={NOWPLAYING_PAGE} element={<NowPlaying />} />
-          <Route path={UPCOMING_PAGE} element={<UpComing />} />
-          <Route path={SEARCH_PAGE} element={<Search />} />
-          <Route path={TOPRATED_PAGE} element={<TopRated />} />
+          <Route element={<Layout />}>
+            <Route path={HOME_PAGE} element={<Home />} />
+            <Route path={DETAIL_PAGE} element={<Detail />} />
+            <Route path={NOWPLAYING_PAGE} element={<NowPlaying />} />
+            <Route path={UPCOMING_PAGE} element={<UpComing />} />
+            <Route path={SEARCH_PAGE} element={<Search />} />
+            <Route path={TOPRATED_PAGE} element={<TopRated />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
