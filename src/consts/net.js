@@ -6,3 +6,5 @@ export const HTTP_METHODS = {
   PUT: 'put',
   DELETE: 'delete',
 };
+
+export const SEARCH_MOVIE_URL = '/search/movie';
