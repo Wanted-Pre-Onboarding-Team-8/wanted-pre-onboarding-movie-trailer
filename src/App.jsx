@@ -1,5 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HOME_PAGE, DETAIL_PAGE, NOWPLAYING_PAGE, UPCOMING_PAGE, SEARCH_PAGE, TOPRATED_PAGE } from './consts';
+import {
+  HOME_PAGE,
+  DETAIL_PAGE,
+  NOWPLAYING_PAGE,
+  UPCOMING_PAGE,
+  SEARCH_PAGE,
+  TOPRATED_PAGE,
+} from './consts';
 import { Home, Detail, NowPlaying, UpComing, Search, TopRated } from './pages';
 
 import { Layout } from './components';

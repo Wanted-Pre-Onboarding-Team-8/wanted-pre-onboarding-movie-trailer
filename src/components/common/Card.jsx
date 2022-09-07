@@ -6,9 +6,10 @@ import { FaStar } from 'react-icons/fa';
 
 export default function Card({ id, imgSrc, title, voteAverage, voteCount }) {
   const navigate = useNavigate();
+  const handleClickCard = () => navigate(`/detail/${id}`);
 
   return (
-    <Wrapper onClick={() => navigate(`/detail/:${id}`)}>
+    <Wrapper onClick={handleClickCard}>
       <ImageWrapper>
         <img src={`https://image.tmdb.org/t/p/w500/${imgSrc}`} alt={title} />
       </ImageWrapper>
@@ -16,7 +17,7 @@ export default function Card({ id, imgSrc, title, voteAverage, voteCount }) {
         <p>{title}</p>
         <div>
           <FaStar className="faStar" />
-          <p className="voteAverage">{voteAverage}</p>
+          <p>{voteAverage}</p>
           <p className="voteCount">({voteCount})</p>
         </div>
       </MovieData>

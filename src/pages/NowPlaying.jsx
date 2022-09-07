@@ -1,42 +1,34 @@
-/* eslint-disable */
-
-import { useEffect, useState } from 'react';
-import { useInfiniteQuery, useQuery } from 'react-query';
+import { useEffect } from 'react';
+import { useInfiniteQuery } from 'react-query';
 import styled from 'styled-components';
 import { NowPlayingItem } from '../components';
-import http from '../apis/base';
+import { getNowPlayingMovies } from '../apis/movie';
 
 const INITIAL_PAGE_NUMBER = 1;
-const LANGUAGE = 'ko-KR';
-const REGION = 'KR';
-
-const getNowPlayingMovies = async (currentPage) => {
-  return await http.get({
-    url: '/movie/now_playing',
-    params: {
-      page: currentPage,
-      language: LANGUAGE,
-      region: REGION,
-    },
-  });
-};
 
 export default function NowPlaying() {
-  const [currentPage, setCurrentPage] = useState(INITIAL_PAGE_NUMBER);
-  const { data, isLoading, isFetching} = useQuery('get', (currentPage) => getNowPlayingMovies(currentPage));
-  // const { data, isLoading, isFetching } = useInfiniteQuery(
-  //   'getNowPlayingMoives',
-  //   ({ pageParams = INITIAL_PAGE_NUMBER }) => getNowPlayingMovies(pageParams),
-  // );
+  const { data, isLoading, isFetching, hasNextPage, fetchNextPage } =
+    useInfiniteQuery(
+      'getNowPlayingMoives',
+      ({ pageParam = INITIAL_PAGE_NUMBER }) => {
+        return getNowPlayingMovies(pageParam);
+      },
+      {
+        getNextPageParam: (lastPage) => {
+          if (lastPage.data.page === lastPage.data.total_pages) return;
+          return lastPage.data.page + 1;
+        },
+      },
+    );
 
-  const movies = data?.data?.results;
-
-  const onScroll = (event) => {
+  const onScroll = async (event) => {
     const { scrollHeight, scrollTop, clientHeight } =
       event.target.scrollingElement;
 
-    if (!isFetching && scrollHeight - scrollTop <= clientHeight * 1.5) {
-      console.log('hi');
+    if (scrollHeight - scrollTop <= clientHeight * 1.25) {
+      if (!isFetching && hasNextPage) {
+        await fetchNextPage();
+      }
     }
   };
 
@@ -46,17 +38,20 @@ export default function NowPlaying() {
     return () => {
       document.removeEventListener('scroll', onScroll);
     };
-  }, []);
-  
-  console.log(movies);
+  }, [data]);
 
   return (
     <Wrapper>
       {!isLoading ? (
-        movies?.map((movie) => <NowPlayingItem key={movie.id} movie={movie}/>)
-      ) : (
-        <h1 style={{ color: 'white' }}>loading...</h1>
-      )}
+        data?.pages?.map((page) => {
+          return page?.data?.results?.map((movie) => {
+            return <NowPlayingItem key={movie.id} movie={movie} />;
+          });
+        })
+      ) : 
+        <h1>로딩 중입니다.</h1>
+      }
+      <div></div>
     </Wrapper>
   );
 }
@@ -67,7 +62,7 @@ const Wrapper = styled.div`
   max-width: 1200px;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 `;

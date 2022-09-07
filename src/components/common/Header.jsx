@@ -27,7 +27,7 @@ export default function Header() {
     <Wrapper>
       <Logo>
         <GiTomato />
-        <span class="title">Fresh Tomato</span>
+        <span className="title">Fresh Tomato</span>
       </Logo>
       <NavItems isOpenMenu={isOpenMenu}>
         <NavItem>
