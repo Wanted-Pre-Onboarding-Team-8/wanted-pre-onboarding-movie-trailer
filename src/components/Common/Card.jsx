@@ -5,10 +5,10 @@ import { colors } from '../../style/colors';
 
 export default function Card({ id, imgSrc, title, star, voteCount }) {
   const navigate = useNavigate();
-  const handleClickWrapperComponent = () => navigate(`/detail/${id}`);
+  const handleClickCard = () => navigate(`/detail/${id}`);
 
   return (
-    <Wrapper onClick={handleClickWrapperComponent}>
+    <Wrapper onClick={handleClickCard}>
       <ImageWrapper>
         <img src={`https://image.tmdb.org/t/p/w500/${imgSrc}`} alt={title} />
       </ImageWrapper>
