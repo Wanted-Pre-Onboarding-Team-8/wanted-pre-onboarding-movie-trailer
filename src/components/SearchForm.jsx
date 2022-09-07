@@ -1,10 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { getMoviesBySearchKeyword } from '../apis';
 import { colors } from '../style';
 import { BsSearch as SearchIcon } from 'react-icons/bs';
+import { SEARCH_PAGE } from '../consts';
 
 export default function SearchForm() {
+  const navigate = useNavigate();
+
   const handleSubmitSearchForm = async (event) => {
     event.preventDefault();
 
@@ -14,6 +18,8 @@ export default function SearchForm() {
     try {
       const { data } = await getMoviesBySearchKeyword(keyword);
       console.log(data);
+
+      await navigate(SEARCH_PAGE);
     } catch (error) {
       console.error(error);
     }
