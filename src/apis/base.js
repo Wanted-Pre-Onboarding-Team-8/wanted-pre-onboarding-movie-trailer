@@ -9,8 +9,8 @@ const customAxios = axios.create({
   },
 });
 
-const createApiMethod = (axiosInstance, methodType) => {
-  return axiosInstance({ method: methodType });
+const createApiMethod = (axiosInstance, methodType) => (config) => {
+  return axiosInstance({ ...config, method: methodType });
 };
 
 export default {
