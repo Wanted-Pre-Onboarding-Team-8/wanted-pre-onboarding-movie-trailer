@@ -8,12 +8,12 @@ import {
   TOPRATED_PAGE,
 } from './consts';
 import {
-  HomePage,
-  DetailMovie,
-  NowPlayingMovies,
-  UpComingMovies,
-  SearchMovies,
-  TopRatedMovies,
+  Home,
+  Detail,
+  NowPlaying,
+  UpComing,
+  Search,
+  TopRated,
 } from './pages';
 
 function App() {
@@ -21,12 +21,12 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path={HOME_PAGE} element={<HomePage />} />
-          <Route path={DETAIL_PAGE} element={<DetailMovie />} />
-          <Route path={NOWPLAYING_PAGE} element={<NowPlayingMovies />} />
-          <Route path={UPCOMING_PAGE} element={<UpComingMovies />} />
-          <Route path={SEARCH_PAGE} element={<SearchMovies />} />
-          <Route path={TOPRATED_PAGE} element={<TopRatedMovies />} />
+          <Route path={HOME_PAGE} element={<Home />} />
+          <Route path={DETAIL_PAGE} element={<Detail />} />
+          <Route path={NOWPLAYING_PAGE} element={<NowPlaying />} />
+          <Route path={UPCOMING_PAGE} element={<UpComing />} />
+          <Route path={SEARCH_PAGE} element={<Search />} />
+          <Route path={TOPRATED_PAGE} element={<TopRated />} />
         </Routes>
       </BrowserRouter>
     </div>
