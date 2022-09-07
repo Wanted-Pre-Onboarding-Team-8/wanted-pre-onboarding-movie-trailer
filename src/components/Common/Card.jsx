@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { colors } from '../../style/colors';
 
-export default function Card({ props }) {
-  const { id, imgSrc, title, star, voteCount } = props;
+export default function Card({ id, imgSrc, title, star, voteCount }) {
   const navigate = useNavigate();
 
   return (
