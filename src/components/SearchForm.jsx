@@ -15,6 +15,8 @@ export default function SearchForm() {
     const { searchKeywordInput } = event.currentTarget;
     const keyword = searchKeywordInput.value;
 
+    if (!keyword) return;
+
     try {
       const { data } = await getMoviesBySearchKeyword(keyword);
       console.log(data);
