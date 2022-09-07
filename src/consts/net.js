@@ -6,3 +6,8 @@ export const HTTP_METHODS = {
   PUT: 'put',
   DELETE: 'delete',
 };
+
+export const MOVIE_POPULAR_URI = '/movie/popular';
+export const MOVIE_NOW_PLAYING_URI = '/movie/now_playing';
+export const MOVIE_UPCOMING_URI = '/movie/upcoming';
+export const MOVIE_TOP_RATED_URI = '/movie/top_rated';
