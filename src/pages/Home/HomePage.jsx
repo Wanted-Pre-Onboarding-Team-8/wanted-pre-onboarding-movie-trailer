@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../../components/Common/Card';
+import { Card } from '../../components';
 
 export default function HomePage() {
   return <Card />;

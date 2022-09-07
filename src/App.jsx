@@ -6,7 +6,7 @@ import {
   UPCOMING_PAGE,
   SEARCH_PAGE,
   TOPRATED_PAGE,
-} from './consts/route';
+} from './consts';
 import {
   HomePage,
   DetailMovie,
