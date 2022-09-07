@@ -47,11 +47,13 @@ export default function NowPlaying() {
       document.removeEventListener('scroll', onScroll);
     };
   }, []);
+  
+  console.log(movies);
 
   return (
     <Wrapper>
       {!isLoading ? (
-        movies?.map((movie) => <NowPlayingItem key={movie.id} />)
+        movies?.map((movie) => <NowPlayingItem key={movie.id} movie={movie}/>)
       ) : (
         <h1 style={{ color: 'white' }}>loading...</h1>
       )}

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { Card } from '../common';
 
-export default function NowPlayingItem() {
+export default function NowPlayingItem({movie}) {
+  
   return (
     <Wrapper>
-      <Card />
+      <Card id={movie.id} imgSrc={movie.poster_path} title={movie.title} star={movie.vote_average} voteCount={movie.vote_count}/>
     </Wrapper>
   );
 }
