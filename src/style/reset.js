@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-export const reset = styled.reset`
+export const reset = `
   html,
   body,
   div,
