@@ -1,5 +1,6 @@
 import React from 'react';
+import UpComingComponent from '../components/UpComingComponent/UpComingComponent';
 
-export default function DetailMovie() {
-  return <h1>디테일 페이지입니다</h1>;
+export default function UpComing() {
+  return <UpComingComponent />;
 }
