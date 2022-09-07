@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import usePopularMoviesQuery from '../../hooks/queries/usePopularMoviesQuery';
-import useIntersection from '../../hooks/useIntersection';
-import { Card } from '../common';
-import CardSkeleton from '../common/CardSkeleton';
+import { usePopularMoviesQuery, useIntersection } from '../../hooks';
+import { Card, CardSkeleton } from '../common';
 
 export default function PopularList() {
   const { data, isFetching, hasNextPage, fetchNextPage } =

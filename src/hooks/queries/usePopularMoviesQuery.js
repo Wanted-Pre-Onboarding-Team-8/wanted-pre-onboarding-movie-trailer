@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from 'react-query';
-import { getPopularMovies } from '../../apis/movie';
-import queryKey from '../../consts/queryKey';
+import { getPopularMovies } from '../../apis';
+import { queryKey } from '../../consts';
 
 export default function usePopularMoviesQuery(payload, option) {
   const { page } = payload;

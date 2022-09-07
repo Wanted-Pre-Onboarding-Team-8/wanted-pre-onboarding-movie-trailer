@@ -1,13 +1,13 @@
 import { useInfiniteQuery } from 'react-query';
-import { getTopRatedMovie } from '../../apis/movie';
-import queryKey from '../../consts/queryKey';
+import { getTopRatedMovies } from '../../apis';
+import { queryKey } from '../../consts';
 
 export default function useTopRatedMoviesQuery(payload, option) {
   const { page } = payload;
   return useInfiniteQuery(
     [queryKey.getTopRatedMovie, page],
     ({ pageParam = 1 }) => {
-      return getTopRatedMovie({ page: pageParam });
+      return getTopRatedMovies({ page: pageParam });
     },
     {
       ...option,

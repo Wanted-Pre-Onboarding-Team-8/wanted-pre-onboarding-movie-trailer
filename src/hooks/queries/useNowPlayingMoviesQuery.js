@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from 'react-query';
-import { getNowPlayingMovies } from '../../apis/movie';
-import queryKey from '../../consts/queryKey';
+import { getNowPlayingMovies } from '../../apis';
+import { queryKey } from '../../consts';
 
 export default function useNowPlayingMoviesQuery(payload, option) {
   const { page } = payload;
