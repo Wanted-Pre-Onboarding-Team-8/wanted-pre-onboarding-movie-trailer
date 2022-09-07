@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { colors } from './colors';
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
+  ${reset};
   
   body {
     background-color: ${colors.gray1};
