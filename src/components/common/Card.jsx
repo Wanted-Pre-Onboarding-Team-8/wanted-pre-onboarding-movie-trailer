@@ -3,15 +3,23 @@ import { useNavigate } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { colors } from '../../style/colors';
 import { FaStar } from 'react-icons/fa';
+import { IMAGE_NOT_FOUND_URL } from '../../consts/image';
 
 export default function Card({ id, imgSrc, title, voteAverage, voteCount }) {
   const navigate = useNavigate();
   const handleClickCard = () => navigate(`/detail/${id}`);
+  const handleErrorImage = ({ currentTarget }) => {
+    currentTarget.src = IMAGE_NOT_FOUND_URL;
+  };
 
   return (
     <Wrapper onClick={handleClickCard}>
       <ImageWrapper>
-        <img src={`https://image.tmdb.org/t/p/w500/${imgSrc}`} alt={title} />
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${imgSrc}`}
+          alt={title}
+          onError={handleErrorImage}
+        />
       </ImageWrapper>
       <MovieData>
         <p>{title}</p>
