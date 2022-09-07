@@ -1,6 +1,6 @@
-export { default as DetailMovie } from './Detail/DetailMovie';
-export { default as NowPlayingMovies } from './NowPlaying/NowPlayingMovies';
-export { default as SearchMovies } from './Search/SearchMovies';
-export { default as TopRatedMovies } from './TopRated/TopRatedMovies';
-export { default as UpComingMovies } from './UpComing/UpComingMovies';
-export { default as HomePage } from './Home/HomePage';
+export { default as Detail } from './Detail/Detail';
+export { default as NowPlaying } from './NowPlaying/NowPlaying';
+export { default as Search } from './Search/Search';
+export { default as TopRated } from './TopRated/TopRated';
+export { default as UpComing } from './UpComing/UpComing';
+export { default as Home } from './Home/Home';
