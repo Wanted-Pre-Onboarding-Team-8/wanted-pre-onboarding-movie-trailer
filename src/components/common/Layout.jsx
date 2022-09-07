@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
+import ScrollToTopButton from './ScrollToTopButton';
 
 function Layout() {
   return (
@@ -8,6 +9,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
+      <ScrollToTopButton />
     </div>
   );
 }
