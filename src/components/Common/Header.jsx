@@ -1,51 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import {
-  HOME_PAGE,
-  UPCOMING_PAGE,
-  TOPRATED_PAGE,
-  NOWPLAYING_PAGE,
-} from '../../consts';
+import { navMenuData } from '../../utils';
 import { colors } from '../../style/colors';
 import { media } from '../../style/media';
 import { GiTomato, GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
-
-const wrappingNavData = [
-  {
-    id: 1,
-    element: (
-      <Link to={HOME_PAGE}>
-        <span>Home</span>
-      </Link>
-    ),
-  },
-  {
-    id: 2,
-    element: (
-      <Link to={UPCOMING_PAGE}>
-        <span>Comming</span>
-      </Link>
-    ),
-  },
-  {
-    id: 3,
-    element: (
-      <Link to={TOPRATED_PAGE}>
-        <span>Ranking</span>
-      </Link>
-    ),
-  },
-  {
-    id: 4,
-    element: (
-      <Link to={NOWPLAYING_PAGE}>
-        <span>Now</span>
-      </Link>
-    ),
-  },
-];
 
 export default function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -65,7 +24,7 @@ export default function Header() {
         <span class="title">Fresh Tomato</span>
       </Logo>
       <NavItems isOpenMenu={isOpenMenu}>
-        {wrappingNavData.map((item) => (
+        {navMenuData.map((item) => (
           <NavItem key={item.id}>{item.element}</NavItem>
         ))}
       </NavItems>
