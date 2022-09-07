@@ -48,9 +48,9 @@ export default function NowPlaying() {
             return <NowPlayingItem key={movie.id} movie={movie} />;
           });
         })
-      ) : 
+      ) : (
         <h1>로딩 중입니다.</h1>
-      }
+      )}
       <div></div>
     </Wrapper>
   );
