@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card } from '../components';
+import { PopularList } from '../components/Home';
 
 export default function HomePage() {
-  return <Card />;
+  return <PopularList />;
 }
