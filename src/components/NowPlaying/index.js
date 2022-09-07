@@ -1,1 +1,1 @@
-export { default as NowPlayingItem } from './NowPlayingItem';
+export { default as NowPlayingList } from './NowPlayingList';
