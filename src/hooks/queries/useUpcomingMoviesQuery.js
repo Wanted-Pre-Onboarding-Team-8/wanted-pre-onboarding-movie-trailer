@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from 'react-query';
-import { getTopRatedMovies } from '../../apis';
+import { getUpcomingMovies } from '../../apis';
 import { queryKey } from '../../consts';
 
 export default function useUpcomingMoviesQuery(payload, option) {
@@ -7,7 +7,7 @@ export default function useUpcomingMoviesQuery(payload, option) {
   return useInfiniteQuery(
     [queryKey.getUpcomingMovie, page],
     ({ pageParam = 1 }) => {
-      return getTopRatedMovies({ page: pageParam });
+      return getUpcomingMovies({ page: pageParam });
     },
     {
       ...option,

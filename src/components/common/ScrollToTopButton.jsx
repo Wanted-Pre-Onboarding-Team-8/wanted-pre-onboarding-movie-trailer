@@ -21,18 +21,20 @@ export default function ScrollToTopButton() {
         setShowButton(false);
       }
     };
-    
-    window.addEventListener('scroll', handleShowButton)
-    
+
+    window.addEventListener('scroll', handleShowButton);
+
     return () => {
       window.removeEventListener('scroll', handleShowButton);
-    }
+    };
   }, []);
 
-  return showButton && (
-    <Wrapper onClick={scrollToTop}>
-      <FaArrowCircleUp />
-    </Wrapper>
+  return (
+    showButton && (
+      <Wrapper onClick={scrollToTop}>
+        <FaArrowCircleUp />
+      </Wrapper>
+    )
   );
 }
 
