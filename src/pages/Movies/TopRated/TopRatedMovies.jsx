@@ -1,8 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export default function TopRatedMovies() {
-    return (
-        <h1>페이지입니다</h1>
-    )
+  return <h1>페이지입니다</h1>;
 }
-
