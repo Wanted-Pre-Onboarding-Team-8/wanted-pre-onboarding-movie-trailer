@@ -7,10 +7,10 @@ import {
   UPCOMING_PAGE,
   NOWPLAYING_PAGE,
 } from '../../consts';
-import { colors } from '../../style/colors';
-import { media } from '../../style/media';
+import { colors, media } from '../../style/';
 import { GiTomato, GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { SearchForm } from '../../components';
 
 export default function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -29,6 +29,7 @@ export default function Header() {
         <GiTomato />
         <span className="title">Fresh Tomato</span>
       </Logo>
+      <SearchForm />
       <NavItems isOpenMenu={isOpenMenu}>
         <NavItem>
           <Link to={HOME_PAGE}>
