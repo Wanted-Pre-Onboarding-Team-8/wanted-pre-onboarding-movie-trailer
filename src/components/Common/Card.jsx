@@ -6,12 +6,10 @@ export default function Card() {
   return (
     <Wrapper>
       <Image>
-        <img src="img/poster.jpg" alt="Avatar" />
+        <Poster src="img/poster.jpg" alt="Avatar" />
       </Image>
       <MovieData>
-        <h4>
-          <b>스파이더맨</b>
-        </h4>
+        <p>스파이더맨</p>
         <p>2022-06-11</p>
       </MovieData>
     </Wrapper>
@@ -32,13 +30,14 @@ const Wrapper = styled.div`
 const Image = styled.div`
   width: 100%;
   height: 80%;
-
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px 5px 0 0;
-  }
 `;
+
+const Poster = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+`;
+
 const MovieData = styled.div`
   width: 100%;
   padding: 2px 16px;
