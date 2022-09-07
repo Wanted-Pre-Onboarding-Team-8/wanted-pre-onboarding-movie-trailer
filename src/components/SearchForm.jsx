@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchForm() {
+export default function SearchForm() {
   return (
     <form>
       <legend>검색어 입력폼</legend>
@@ -12,5 +12,3 @@ function SearchForm() {
     </form>
   );
 }
-
-export default SearchForm;

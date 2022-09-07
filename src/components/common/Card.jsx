@@ -9,7 +9,7 @@ export default function Card() {
         <img src="img/poster.jpg" alt="Avatar" />
       </ImageWrapper>
       <MovieData>
-        <p>스파이더맨</p>
+        <p>아이언맨</p>
         <p>2022-06-11</p>
       </MovieData>
     </Wrapper>
@@ -30,7 +30,6 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   width: 100%;
   height: 80%;
-
   img {
     width: 100%;
     height: 100%;
@@ -42,7 +41,6 @@ const MovieData = styled.div`
   width: 100%;
   padding: 2px 16px;
   margin-top: 12px;
-
   p {
     margin-top: 10px;
   }
