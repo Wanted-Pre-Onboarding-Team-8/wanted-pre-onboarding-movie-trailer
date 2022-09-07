@@ -1,19 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { colors } from '../../style/colors';
 
 export default function Card({ props }) {
-  const { imgSrc, title, star, vote_count } = props;
+  const { id, imgSrc, title, star, voteCount } = props;
+  const navigate = useNavigate();
 
   return (
-    <Wrapper>
+    <Wrapper onClick={() => navigate(`/detail/:${id}`)}>
       <ImageWrapper>
-        <img src={imgSrc} alt={title} />
+        <img src={`https://image.tmdb.org/t/p/w500/${imgSrc}`} alt={title} />
       </ImageWrapper>
       <MovieData>
         <p>제목: {title}</p>
         <p>
-          별점: ★ {star}({vote_count})
+          별점: ★ {star}({voteCount})
         </p>
       </MovieData>
     </Wrapper>
@@ -30,6 +32,12 @@ const Wrapper = styled.div`
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   background-color: ${colors.white};
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    filter: invert(30%);
+  }
 `;
 const ImageWrapper = styled.div`
   width: 100%;
