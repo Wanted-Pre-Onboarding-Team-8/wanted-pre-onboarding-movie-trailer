@@ -76,12 +76,14 @@ const TabMenu = styled.div`
     position: relative;
     outline: none;
     cursor: pointer;
+    color: white;
   }
 
   .active-tabs {
+    color: white;
     margin-right: 10%;
     font-weight: 800;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.986);
+    border-bottom: 2px solid white;
   }
 `;
 const TabContents = styled.div`
@@ -98,5 +100,6 @@ const TabContents = styled.div`
   .active-content {
     display: block;
     line-height: 30px;
+    color: white;
   }
 `;

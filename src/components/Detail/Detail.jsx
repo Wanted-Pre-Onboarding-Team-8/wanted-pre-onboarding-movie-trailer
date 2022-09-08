@@ -116,9 +116,11 @@ const DetailTitle = styled.div`
     font-weight: 600;
     font-size: 30px;
     line-height: 36px;
+    color: white;
   }
   h5 {
     font-weight: 600;
+    color: white;
   }
 `;
 
@@ -144,6 +146,7 @@ const InnerDetail = styled.div`
     display: table-cell;
     text-indent: 10px;
     line-height: 27px;
+    color: white;
     word-break: break-all;
     word-wrap: break-word;
   }
