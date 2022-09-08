@@ -27,8 +27,6 @@ export default function Detail() {
     return results;
   };
 
-  console.log(movieDetail);
-
   return (
     <Wrapper>
       <HeadBox>
