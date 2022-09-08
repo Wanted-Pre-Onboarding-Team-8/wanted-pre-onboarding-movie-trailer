@@ -11,13 +11,12 @@ export default function DetailTab(props) {
 
   const renderTrailer = () => {
     const trailer = props.movieDetail.videos.results.find(
-      (vid) => vid.name === 'Official Trailer',
+      (vid) => vid.name === 'Trailer',
     );
     const key = trailer ? trailer.key : props.movieDetail.videos.results[0].key;
 
     return (
       <YouTube
-        src={`http://www.youtube.com/embed/${key}?autoplay=1&mute=1`}
         videoId={key}
         opts={{
           playerVars: {
