@@ -92,7 +92,7 @@ export default function Detail() {
 const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: 0px 0 0 135px;
+  padding: 0px 0 0 134px;
 `;
 
 const HeadBox = styled.div`
