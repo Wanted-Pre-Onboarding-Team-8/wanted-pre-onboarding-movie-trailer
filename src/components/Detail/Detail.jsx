@@ -11,6 +11,10 @@ export default function Detail() {
 
   const IMG_PATH = 'https://www.themoviedb.org/t/p/w500';
 
+  useEffect(() => {
+    getMovieDetail();
+  }, []);
+
   const getMovieDetail = async () => {
     const { data: results } = await Api.get({
       url: `/movie/${id}`,
@@ -22,9 +26,6 @@ export default function Detail() {
     setMovieDetail(results);
     return results;
   };
-  useEffect(() => {
-    getMovieDetail();
-  }, []);
 
   return (
     <Wrapper>
@@ -50,19 +51,21 @@ export default function Detail() {
               </dl>
               <dl>
                 <dt>장르</dt>
-                <dd key={movieDetail.genres[0]?.id}>
-                  {movieDetail.genres[0]?.name}
-                </dd>
+                {movieDetail.genres &&
+                  movieDetail.genres.map((genres) => (
+                    <dd key={movieDetail?.genres?.id}>{genres.name} </dd>
+                  ))}
               </dl>
               <dl>
                 <dt>국가</dt>
-                <dd key={movieDetail.production_countries[0]?.id}>
-                  {movieDetail.production_countries[0]?.name}
-                </dd>
-              </dl>
-              <dl>
-                <dt>등급</dt>
-                <dd>12세이상 관람가</dd>
+                {movieDetail.production_countries &&
+                  movieDetail.production_countries.map(
+                    (production_countries) => (
+                      <dd key={movieDetail?.production_countries.id}>
+                        {production_countries.name}
+                      </dd>
+                    ),
+                  )}
               </dl>
               <dl>
                 <dt>러닝타임</dt>
@@ -128,7 +131,7 @@ const DetailContents = styled.div`
 const InnerDetail = styled.div`
   display: table;
   max-width: 60%;
-  margin-right: 60px;
+  margin-right: 30px;
   dl {
     display: table-row;
   }
@@ -139,8 +142,10 @@ const InnerDetail = styled.div`
   }
   dd {
     display: table-cell;
-    text-indent: 20px;
+    text-indent: 10px;
     line-height: 27px;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 `;
 
