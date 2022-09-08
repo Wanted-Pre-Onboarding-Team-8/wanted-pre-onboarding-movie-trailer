@@ -1,5 +1,6 @@
 import React from 'react';
+import { NowPlayingList } from '../components';
 
-export default function NowPlayingMovie() {
-  return <h1>페이지입니다</h1>;
+export default function HomePage() {
+  return <NowPlayingList />
 }

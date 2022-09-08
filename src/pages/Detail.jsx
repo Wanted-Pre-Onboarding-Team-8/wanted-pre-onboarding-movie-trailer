@@ -1,5 +1,5 @@
-import React from 'react';
+import { Detail } from '../components/Detail';
 
 export default function DetailMovie() {
-  return <h1>페이지입니다</h1>;
+  return <Detail />;
 }
