@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import YouTube from 'react-youtube';
+import { colors } from '../../style/colors';
 
 export default function DetailTab(props) {
   const [toggle, setToggle] = useState(1);
@@ -62,6 +63,10 @@ const Wrapper = styled.div`
   position: relative;
   width: 50%;
   margin-top: 30px;
+  
+  * {
+  color: ${colors.white}
+  }
 `;
 
 const TabMenu = styled.div`
