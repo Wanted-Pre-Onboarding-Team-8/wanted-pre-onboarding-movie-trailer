@@ -4,6 +4,7 @@ import { IoMdStar } from 'react-icons/io';
 import Api from '../../apis/base';
 import { useParams } from 'react-router-dom';
 import DetailTab from './DetailTab';
+import { colors } from '../../style/colors';
 
 export default function Detail() {
   const [movieDetail, setMovieDetail] = useState([]);
@@ -93,6 +94,10 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0px 0 0 135px;
+  
+  * {
+    color: ${colors.white};
+  }
 `;
 
 const HeadBox = styled.div`
